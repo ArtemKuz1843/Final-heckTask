@@ -2,7 +2,7 @@
 //Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями,
 //лучше обойтись исключительно массивами.
 
-string[] Counting = new string [3]{"Турба", "Урба", "Сентебряки"};
+string[] Counting = new string[3] { "Турба", "Урба", "Сентебряки" };
 
 void PrintArray(string[] arr)
 {
@@ -17,3 +17,21 @@ void PrintArray(string[] arr)
 
 Console.WriteLine("Задан массив строк: ");
 PrintArray(Counting);
+
+void KeepSizeString(string[] arr, int num)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        num = num-1;
+        string line = arr[i];
+        int Length = line.Length;
+        for (int j = 0; j < Length; j++)
+        {
+            if (j >= num)
+            {
+                line[j] = "";
+            } 
+        }
+        Console.WriteLine();
+    }
+}
