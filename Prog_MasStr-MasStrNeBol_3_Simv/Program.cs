@@ -26,10 +26,10 @@ string[] ResizeStringsArr(string[] arr, int num)
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         string line = arr[i];
-        if ((line.Length - num) > 1)
-        { 
-        line = line.Remove(num, line.Length - num);
-        ResizesArr[i] = line;
+        if ((line.Length - num) > 0)
+        {
+            line = line.Remove(num, line.Length - num);
+            ResizesArr[i] = line;
         }
         else ResizesArr[i] = line;
     }
@@ -39,5 +39,5 @@ string[] ResizeStringsArr(string[] arr, int num)
 Console.WriteLine();
 
 Console.WriteLine("Преобразованный массив строк:");
-string[] result = ResizeStringsArr(Counting, 8);
+string[] result = ResizeStringsArr(Counting, 3);
 PrintArray(result);
