@@ -2,7 +2,7 @@
 //Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями,
 //лучше обойтись исключительно массивами.
 
-string[] Counting = new string[] { "Турба", "Урб", "Сентебряки", "Эус", "Деус", "Раснодеус", "Бац" };
+string[] Counting = new string[] { "Турба", "Урба", "Сентебряки", "Эус", "Деус", "Раснодеус", "Бац" };
 
 void PrintArray(string[] arr)
 {
@@ -20,19 +20,27 @@ PrintArray(Counting);
 
 Console.WriteLine();
 
-string[] ResizeStringsArr(string[] arr, int num)
+string[] ResizeStringsArr(string[] arr, int limit) //данный метод вычислит размер будущего массива строк, создаст его, заполнит и вернёт.
 {
-    string[] ResizesArr = new string[arr.GetLength(0)];
+    int ResizeArrLength = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
-        string line = arr[i];
-        if (line.Length <= num)
-        {
-            ResizesArr[i] = line;
-        }
-        else ResizesArr[i] = string.Empty;
+        string Str = arr[i];
+        if (Str.Length <= limit) ResizeArrLength++;
     }
-    return ResizesArr;
+
+    string[] ResizeArr = new string[ResizeArrLength];
+    int j = 0;
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        string Str = arr[i];
+        if (Str.Length <= limit)
+        {
+            ResizeArr[j] = Str;
+            j++;
+        }
+    }
+    return ResizeArr;
 }
 
 Console.WriteLine();
