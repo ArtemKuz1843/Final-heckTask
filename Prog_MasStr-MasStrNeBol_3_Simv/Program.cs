@@ -19,6 +19,7 @@ Console.WriteLine("Задан массив строк: ");
 PrintArray(Counting);
 
 Console.WriteLine();
+Console.WriteLine();
 
 string[] ResizeStringsArr(string[] arr, int limit) //данный метод вычислит размер будущего массива строк, создаст его, заполнит и вернёт.
 {
@@ -30,21 +31,19 @@ string[] ResizeStringsArr(string[] arr, int limit) //данный метод в�
     }
 
     string[] ResizeArr = new string[ResizeArrLength];
-    int j = 0;
+    int IndexResize = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         string Str = arr[i];
         if (Str.Length <= limit)
         {
-            ResizeArr[j] = Str;
-            j++;
+            ResizeArr[IndexResize] = Str;
+            IndexResize++;
         }
     }
     return ResizeArr;
 }
 
-Console.WriteLine();
-
 Console.WriteLine("Преобразованный массив строк:");
-string[] result = ResizeStringsArr(Counting, 3);
-PrintArray(result);
+string[] ResultArr = ResizeStringsArr(Counting, 3);
+PrintArray(ResultArr);
